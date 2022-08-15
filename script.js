@@ -9,19 +9,6 @@ const createProductImageElement = (imageSource) => {
   return img;
 };
 
-const verificandoImages = async () => {
-  const products = await allProducts();
-
-  products.forEach((itens) => {
-    const objectProducts = {
-      sku: itens.id,
-      name: itens.title,
-      image: itens.thumbnail,
-    };
-    sectionItems.appendChild(createProductItemElement(objectProducts));
-  });
-};
-
 const imageNaTela = async () => {
   const div = document.createElement('div');
   sectionItems.appendChild(div);
@@ -43,7 +30,7 @@ const createProductItemElement = ({ sku, name, image }) => {
   section.appendChild(createCustomElement('span', 'item__title', name));
   section.appendChild(createProductImageElement(image));
   section.appendChild(
-    createCustomElement('button', 'item__add', 'Adicionar ao carrinho!',)
+    createCustomElement('button', 'item__add', 'Adicionar ao carrinho!')
   );
   return section;
 };
@@ -61,6 +48,19 @@ const createCartItemElement = ({ sku, name, salePrice }) => {
   li.innerText = `SKU: ${sku} | NAME: ${name} | PRICE: $${salePrice}`;
   li.addEventListener('click', cartItemClickListener);
   return li;
+};
+
+const verificandoImages = async () => {
+  const products = await allProducts();
+
+  products.forEach((itens) => {
+    const objectProducts = {
+      sku: itens.id,
+      name: itens.title,
+      image: itens.thumbnail,
+    };
+    sectionItems.appendChild(createProductItemElement(objectProducts));
+  });
 };
 
 window.onload = () => { };
