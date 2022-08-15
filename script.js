@@ -1,6 +1,13 @@
 const sectionItems = document.querySelector('.items');
 const ol = document.querySelector('.cart__items');
-const allProducts = async () => await fetchProducts('computador');
+const allProducts = () => fetchProducts('computador');
+
+const createProductImageElement = (imageSource) => {
+  const img = document.createElement('img');
+  img.className = 'item__image';
+  img.src = imageSource;
+  return img;
+};
 
 const verificandoImages = async () => {
   const products = await allProducts();
@@ -13,13 +20,6 @@ const verificandoImages = async () => {
     };
     sectionItems.appendChild(createProductItemElement(objectProducts));
   });
-};
-
-const createProductImageElement = (imageSource) => {
-  const img = document.createElement('img');
-  img.className = 'item__image';
-  img.src = imageSource;
-  return img;
 };
 
 const imageNaTela = async () => {
@@ -43,7 +43,7 @@ const createProductItemElement = ({ sku, name, image }) => {
   section.appendChild(createCustomElement('span', 'item__title', name));
   section.appendChild(createProductImageElement(image));
   section.appendChild(
-    createCustomElement('button', 'item__add', 'Adicionar ao carrinho!')
+    createCustomElement('button', 'item__add', 'Adicionar ao carrinho!',)
   );
   return section;
 };
