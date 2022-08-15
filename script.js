@@ -9,12 +9,6 @@ const createProductImageElement = (imageSource) => {
   return img;
 };
 
-const imageNaTela = async () => {
-  const div = document.createElement('div');
-  sectionItems.appendChild(div);
-  div.innerHTML = await verificandoImages();
-};
-
 const createCustomElement = (element, className, innerText) => {
   const e = document.createElement(element);
   e.className = className;
