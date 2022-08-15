@@ -1,7 +1,7 @@
 const sectionItems = document.querySelector('.items');
 const ol = document.querySelector('.cart__items');
-const btnInsert = document.querySelector('.item__add')
-const ids = document.querySelector('.item__sku')
+const btnInsert = document.querySelector('.item__add');
+const ids = document.querySelector('.item__sku');
 
 const allProducts = () => fetchProducts('computador');
 
@@ -27,7 +27,7 @@ const createProductItemElement = ({ sku, name, image }) => {
   section.appendChild(createCustomElement('span', 'item__title', name));
   section.appendChild(createProductImageElement(image));
   section.appendChild(
-    createCustomElement('button', 'item__add', 'Adicionar ao carrinho!')
+    createCustomElement('button', 'item__add', 'Adicionar ao carrinho!'),
   );
   return section;
 };
