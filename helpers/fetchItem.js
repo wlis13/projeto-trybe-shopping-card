@@ -1,6 +1,6 @@
-const fetchItem = async (idProduto) => {
+const fetchItem = async (itemID) => {
   try {
-    const url = `https://api.mercadolibre.com/items/${idProduto}`;
+    const url = `https://api.mercadolibre.com/items/${itemID}`;
     const requisicao = await fetch(url);
     const resposta = await requisicao.json();
     return resposta;

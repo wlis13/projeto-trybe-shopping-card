@@ -1,4 +1,4 @@
-const fetchProducts = (param) => fetch(`https://api.mercadolibre.com/sites/MLB/search?q=${param}`)
+const fetchProducts = (QUERY) => fetch(`https://api.mercadolibre.com/sites/MLB/search?q=${QUERY}`)
   .then((responseApi) => responseApi.json())
   .then((objectApi) => objectApi.results)
   .catch(() => new Error('You must provide an url'));
