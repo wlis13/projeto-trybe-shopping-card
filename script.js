@@ -1,6 +1,5 @@
 const sectionItems = document.querySelector('.items');
 const ol = document.querySelector('.cart__items');
-const ids = document.querySelector('.item__sku');
 
 const allProducts = () => fetchProducts('computador');
 
@@ -26,7 +25,7 @@ const createProductItemElement = ({ sku, name, image }) => {
   section.appendChild(createCustomElement('span', 'item__title', name));
   section.appendChild(createProductImageElement(image));
   section.appendChild(
-    createCustomElement('button', 'item__add', 'Adicionar ao carrinho!')
+    createCustomElement('button', 'item__add', 'Adicionar ao carrinho!'),
   );
   return section;
 };
@@ -68,7 +67,7 @@ const productInfoCart = async () => {
   btn.forEach((itens) => {
     itens.addEventListener('click', async (event) => {
       const todasInfoProduct = await fetchItem(
-        event.target.parentNode.childNodes[0].innerText
+        event.target.parentNode.childNodes[0].innerText,
       );
       const { id, title, price } = todasInfoProduct;
       const objectInfoProduct = { sku: id, name: title, salePrice: price };
