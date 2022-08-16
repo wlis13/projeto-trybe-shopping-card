@@ -47,7 +47,7 @@ const sectionItem = document.querySelector('.item');
 
 const verificandoImages = async () => {
   const products = await allProducts();
-  let btnReturn;
+
   products.forEach((itens) => {
     const objectProducts = {
       sku: itens.id,
@@ -55,14 +55,14 @@ const verificandoImages = async () => {
       image: itens.thumbnail,
     };
     sectionItems.appendChild(createProductItemElement(objectProducts));
-    btnReturn = document.querySelectorAll('.item__add');
+
   });
-  return btnReturn;
+
 };
 verificandoImages();
-
+const btnReturn = document.getElementsByClassName('.item__add');
 const productInfoCart = async () => {
-  const btn = await verificandoImages();
+  const btn = btnReturn
 
   btn.forEach((itens) => {
     itens.addEventListener('click', async (event) => {
