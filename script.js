@@ -55,14 +55,12 @@ const verificandoImages = async () => {
       image: itens.thumbnail,
     };
     sectionItems.appendChild(createProductItemElement(objectProducts));
-
   });
-
 };
 verificandoImages();
 const btnReturn = document.getElementsByClassName('.item__add');
 const productInfoCart = async () => {
-  const btn = btnReturn
+  const btn = btnReturn;
 
   btn.forEach((itens) => {
     itens.addEventListener('click', async (event) => {
