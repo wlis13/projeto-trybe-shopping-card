@@ -58,10 +58,20 @@ const verificandoImages = async () => {
   });
 };
 verificandoImages();
-const btnReturn = document.getElementsByClassName('.item__add');
-const productInfoCart = async () => {
-  const btn = btnReturn;
 
+const criandoBotao = async () => {
+  const products = await allProducts();
+  let btnInsert;
+  products.forEach((itens) => {
+    const qualquer = '';
+    createProductItemElement(qualquer);
+    btnInsert = document.querySelectorAll('.item__add');
+  });
+  return btnInsert;
+};
+
+const productInfoCart = async () => {
+  const btn = await criandoBotao();
   btn.forEach((itens) => {
     itens.addEventListener('click', async (event) => {
       const todasInfoProduct = await fetchItem(
