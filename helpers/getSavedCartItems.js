@@ -4,7 +4,7 @@ const getSavedCartItems = () => {
   } catch (error) {
     throw new Error('deu ruim!');
   }
-}
+};
 
 if (typeof module !== 'undefined') {
   module.exports = getSavedCartItems;

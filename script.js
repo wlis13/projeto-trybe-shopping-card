@@ -35,7 +35,7 @@ const getSkuFromProductItem = (item) =>
 
 const cartItemClickListener = (event) => {
   const elementoClicado = event.target;
-  event.stopPropagation()
+  event.stopPropagation();
   elementoClicado.remove();
 };
 
@@ -73,7 +73,7 @@ const criandoBotao = async () => {
   });
   return btnInsert;
 };
-let listStringItems = ``;
+let listStringItems = '';
 const productInfoCart = async () => {
   const btn = await criandoBotao();
   btn.forEach((itens) => {
@@ -105,9 +105,6 @@ const recuperarLis = () => {
   });
 };
 
-
-
 window.onload = () => {
 ol.innerHTML = getSavedCartItems();
-
 };
