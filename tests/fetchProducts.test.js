@@ -16,7 +16,7 @@ describe("1 - Teste a função fetchProducts", () => {
     expect(fetch).toBeCalledWith(url);
   });
   it("testa se a função fetchProducts é igual a estrutura da função computadorSearch", async () => {
-    expect.assertions(2);
+
     const funcao = await fetch(
       "https://api.mercadolibre.com/sites/MLB/search?q=computador"
     ).then((responseApi) => responseApi.json());
