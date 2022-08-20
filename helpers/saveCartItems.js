@@ -1,10 +1,4 @@
-const saveCartItems = (value) => {
-  try {
-    localStorage.setItem('cartItem', value);
-  } catch (error) {
-    throw new Error('mensagem esperada aqui');
-  }
-};
+const saveCartItems = (value) => localStorage.setItem('cartItem', value);
 
 if (typeof module !== 'undefined') {
   module.exports = saveCartItems;

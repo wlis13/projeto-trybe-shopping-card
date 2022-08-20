@@ -138,6 +138,8 @@ body {
 .cart .cart__items {
   height: 500px;
   overflow-y: scroll;
+  font-family: sans-serif;
+  color: blue;
 }
 
 .empty-cart {
