@@ -122,11 +122,11 @@ const recuperarLis = () => {
 function loading() {
   const load = document.querySelector('.loading');
   load.innerText = 'Carregando...';
-};
-loading()
+}
+loading();
 function ocultar() {
  document.querySelector('.loading').remove();
-};
+}
 
 window.onload = () => {
 ol.innerHTML = getSavedCartItems();
