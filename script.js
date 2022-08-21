@@ -1,6 +1,7 @@
 const sectionItems = document.querySelector('.items');
 const ol = document.querySelector('.cart__items');
 const preco = document.querySelector('.total-price');
+const container = document.querySelector('.container');
 
 const allProducts = () => fetchProducts('computador');
 
@@ -103,8 +104,10 @@ const recuperarLis = () => {
   });
 };
 function loading() {
-  const load = document.querySelector('.loading');
+  const load = document.createElement('p');
+  load.className = 'loading'
   load.innerText = 'carregando...';
+  container.appendChild(load);
 }
 loading();
 function ocultar() {
