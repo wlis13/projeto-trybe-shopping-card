@@ -116,6 +116,6 @@ function ocultar() {
  document.querySelector('.loading').remove();
 }
 
-window.onload = () => {
-ocultar();
+window.onload = async () => {
+await ocultar();
 };
