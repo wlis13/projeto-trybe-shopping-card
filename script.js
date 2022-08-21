@@ -77,17 +77,6 @@ const criandoBotao = async () => {
 let listStringItems = '';
 let localstorage;
 
-const somarItens = async () => {
-  const listProducts = await document.querySelectorAll('.cart__items li');
-  let valorTotal = 0;
-  listProducts.forEach((itens) => {
-   const valorNumber = itens.innerText.split(': $');
-
-   valorTotal += Number(valorNumber[1]);
-  });
-  preco.innerText = valorTotal;
-};
-
 const productInfoCart = async () => {
   const btn = await criandoBotao();
   btn.forEach((itens) => {
@@ -101,7 +90,6 @@ const productInfoCart = async () => {
       const stringItems = `SKU: ${id} | NAME: ${title} | PRICE: ${price}`;
       listStringItems += stringItems;
       localstorage = saveCartItems(listStringItems);
-      somarItens();
     });
   });
 };
