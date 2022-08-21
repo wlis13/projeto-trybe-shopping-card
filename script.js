@@ -74,8 +74,6 @@ const criandoBotao = async () => {
   });
   return btnInsert;
 };
-let listStringItems = '';
-let localstorage;
 
 const productInfoCart = async () => {
   const btn = await criandoBotao();
@@ -87,9 +85,6 @@ const productInfoCart = async () => {
       const { id, title, price } = todasInfoProduct;
       const objectInfoProduct = { sku: id, name: title, salePrice: price };
       ol.appendChild(createCartItemElement(objectInfoProduct));
-      const stringItems = `SKU: ${id} | NAME: ${title} | PRICE: ${price}`;
-      listStringItems += stringItems;
-      localstorage = saveCartItems(listStringItems);
     });
   });
 };
@@ -109,7 +104,7 @@ const recuperarLis = () => {
 };
 function loading() {
   const load = document.querySelector('.loading');
-  load.innerText = 'Carregando...';
+  load.innerText = 'carregando...';
 }
 loading();
 function ocultar() {
