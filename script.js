@@ -103,18 +103,19 @@ const recuperarLis = () => {
     itens.addEventListener('click', cartItemClickListener);
   });
 };
+
 function loading() {
   const load = document.createElement('p');
-  load.className = 'loading'
+  load.className = 'loading';
   load.innerText = 'carregando...';
   container.appendChild(load);
 }
 loading();
+
 function ocultar() {
  document.querySelector('.loading').remove();
 }
 
 window.onload = () => {
-ol.innerHTML = getSavedCartItems();
 ocultar();
 };
