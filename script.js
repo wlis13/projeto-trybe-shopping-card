@@ -106,8 +106,8 @@ const recuperarLis = () => {
 
 function loading() {
   const load = document.createElement('p');
+  load.innerText = 'carregando';
   load.className = 'loading';
-  load.innerText = 'carregando...';
   container.appendChild(load);
 }
 loading();
