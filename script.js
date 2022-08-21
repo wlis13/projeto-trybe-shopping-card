@@ -119,7 +119,15 @@ const recuperarLis = () => {
     itens.addEventListener('click', cartItemClickListener);
   });
 };
+function loading() {
+  const load = document.querySelector('.loading');
+  load.innerText = 'Carregando...';
+  setTimeout(() => {
+    load.remove();
+  }, 2000);
+};
 
 window.onload = () => {
 ol.innerHTML = getSavedCartItems();
+loading()
 };
