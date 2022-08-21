@@ -1,6 +1,6 @@
 const sectionItems = document.querySelector('.items');
 const ol = document.querySelector('.cart__items');
-const preco = document.querySelector('.total-price')
+const preco = document.querySelector('.total-price');
 
 const allProducts = () => fetchProducts('computador');
 
@@ -77,6 +77,17 @@ const criandoBotao = async () => {
 let listStringItems = '';
 let localstorage;
 
+function somarItens() {
+  const listProducts = document.querySelectorAll('.cart__items li');
+  let valorTotal = 0;
+  listProducts.forEach((itens) => {
+   const valorNumber = itens.innerText.split(': $');
+
+   valorTotal += Number(valorNumber[1]);
+  });
+  preco.innerText = valorTotal;
+}
+
 const productInfoCart = async () => {
   const btn = await criandoBotao();
   btn.forEach((itens) => {
@@ -108,20 +119,6 @@ const recuperarLis = () => {
     itens.addEventListener('click', cartItemClickListener);
   });
 };
-
- function somarItens() {
-const listProducts =  document.querySelectorAll('.cart__items li');
-let valorTotal = 0;
-listProducts.forEach((itens) => {
- const sku = itens.innerText.split('SKU');
- const name = itens.innerText.split('NAME');
- const price = itens.innerText.split('PRICE');
- const valorNumber = itens.innerText.split(': $');
-
- valorTotal += Number(valorNumber[1]);
-});
-preco.innerText = valorTotal;
-}
 
 window.onload = () => {
 ol.innerHTML = getSavedCartItems();
