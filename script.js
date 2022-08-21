@@ -77,8 +77,8 @@ const criandoBotao = async () => {
 let listStringItems = '';
 let localstorage;
 
-function somarItens() {
-  const listProducts = document.querySelectorAll('.cart__items li');
+const somarItens = async () => {
+  const listProducts = await document.querySelectorAll('.cart__items li');
   let valorTotal = 0;
   listProducts.forEach((itens) => {
    const valorNumber = itens.innerText.split(': $');
