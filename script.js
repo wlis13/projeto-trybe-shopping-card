@@ -117,5 +117,6 @@ function ocultar() {
 }
 
 window.onload = async () => {
-await ocultar();
-};
+  await fetchProducts('computador');
+  ocultar();
+}
