@@ -86,7 +86,7 @@ const somarItens = async () => {
    valorTotal += Number(valorNumber[1]);
   });
   preco.innerText = valorTotal;
-}
+};
 
 const productInfoCart = async () => {
   const btn = await criandoBotao();
