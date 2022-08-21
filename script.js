@@ -122,5 +122,4 @@ const recuperarLis = () => {
 
 window.onload = () => {
 ol.innerHTML = getSavedCartItems();
-saveCartItems(ol.innerHTML);
 };
