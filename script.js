@@ -104,9 +104,10 @@ const recuperarLis = () => {
   });
 };
 
+const divPai = document.querySelector('.parent-div');
 function loading() {
   const load = document.createElement('p');
-  load.innerText = 'carregando';
+  load.innerText = 'carregando...';
   load.className = 'loading';
   container.appendChild(load);
 }
